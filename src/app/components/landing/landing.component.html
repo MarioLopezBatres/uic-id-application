@@ -1,0 +1,60 @@
+<div class="col-xs-8 mt-4">
+  <img
+    width="180"
+    height="180"
+    src="../../../assets/imgs/namibia-logo.png"
+    class="mx-auto d-block"
+    alt="Namibia Logo"
+    title="Namibia Logo"
+  />
+</div>
+<div class="col-xs-10 mx-auto mt-5">
+  <!-- Login -->
+  <h2 class="text-center mb-4">ID Application</h2>
+  <form #loginForm="ngForm">
+    <div class="form-group">
+      <label for="id">Identity No.</label>
+      <input
+        type="number"
+        name="idNumber"
+        id="idNumber"
+        [(ngModel)]="values.store.idNumber"
+        class="form-control"
+        placeholder="Your ID Number:"
+        aria-describedby="help"
+        (keydown)="onKeydown($event)"
+        (paste)="avoidPaste($event)"
+        required
+        tabindex="1"
+      />
+      <small *ngIf="!values.store.idNumber">Remaining 11 digits.</small>
+      <small
+        *ngIf="
+          values.store.idNumber &&
+          11 - values.store.idNumber.toString().length > 0
+        "
+      >
+        Remaining {{ 11 - values.store.idNumber.toString().length }} digits.
+      </small>
+      <small
+        class="text-danger"
+        *ngIf="
+          values.store.idNumber &&
+          11 - values.store.idNumber.toString().length < 0
+        "
+      >
+        Too long.
+      </small>
+      <small *ngIf="isInvalid" id="help" class="form-text text-danger"
+        >It must contain exactly 11 digits.</small
+      >
+    </div>
+    <button
+      (click)="validate()"
+      class="btn btn-primary btn-block btn-lg"
+      tabindex="2"
+    >
+      Start
+    </button>
+  </form>
+</div>

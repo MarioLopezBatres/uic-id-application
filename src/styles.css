@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+
+.space-around {
+  display: flex;
+  justify-content: space-around;
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+* {
+  font-size: 15px;
+}

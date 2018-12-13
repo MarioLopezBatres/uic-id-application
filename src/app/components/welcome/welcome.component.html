@@ -1,0 +1,232 @@
+<div class="col-xs-10 mx-auto mt-2">
+  <h2 class="text-center mb-2">Welcome</h2>
+  <h4 class="text-center mb-3">Please select the operation:</h4>
+  <!-- First ID -->
+  <span>To apply for a official ID the first time</span>
+  <button
+    type="button"
+    class="btn btn-primary btn-block mb-2"
+    data-toggle="modal"
+    data-target="#reminderModal"
+  >
+    First ID
+  </button>
+  <!-- Correct data -->
+  <span>To correct an error or change information in your ID</span>
+  <button
+    type="button"
+    class="btn btn-primary btn-block mb-2"
+    data-toggle="modal"
+    data-target="#reminderCorrectModal"
+  >
+    Correct ID
+  </button>
+  <!-- Update data -->
+  <span>To renew your ID when it is no longer valid (expired)</span>
+  <button
+    type="button"
+    class="btn btn-primary btn-block mb-2"
+    data-toggle="modal"
+    data-target="#reminderUpdateModal"
+  >
+    Update ID
+  </button>
+  <!-- Duplicated -->
+  <span>To request a duplicate of your ID in case it was stolen or lost</span>
+  <button
+    type="button"
+    class="btn btn-primary btn-block mb-2"
+    (click)="resetStore()"
+    routerLink="/id-application/duplicate/confirmation"
+  >
+    Duplicate ID
+  </button>
+  <!-- Log out -->
+  <span>Log out and cancel the current operation</span>
+  <button
+    type="button"
+    class="btn btn-danger btn-block"
+    (click)="resetStore()"
+    routerLink=""
+  >
+    Exit
+  </button>
+</div>
+
+<!-- Reminder  first ID -->
+<div
+  class="modal fade"
+  id="reminderModal"
+  role="dialog"
+  aria-labelledby="reminderModalLabel"
+  aria-hidden="true"
+>
+  <!-- Modal for first ID -->
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="reminderModalLabel">Required documents</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="padding-bottom: 0px; padding-top: 0px">
+        <div class="col-xs-10 mx-auto mt-1">
+          <p>In order to proceed, you will need the following documentation:</p>
+          <p>1. Original/full Birth Certificate</p>
+          <p>
+            2. Original Citizenship Certificate (Only People born outside
+            Namibia)
+          </p>
+          <p>3. Marriage Certificate (Married Women only)</p>
+          <p>
+            4. Original Permanent Resident Permit (Permanent Residents only)
+          </p>
+          <p>5. Old Namibian ID (Only applicants in possession of an old ID)</p>
+          <p>6. ID Photo</p>
+        </div>
+      </div>
+      <div class="modal-footer" style="padding-left:0px; padding-right:0px">
+        <div class="container" style="padding:0px;">
+          <div class="space-around">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-dismiss="modal"
+              (click)="resetStore()"
+              routerLink="/id-application/create/form/personal-data"
+            >
+              Proceed&nbsp;&nbsp;<i class="fa fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Reminder Correct -->
+<div
+  class="modal fade"
+  id="reminderCorrectModal"
+  role="dialog"
+  aria-hidden="true"
+>
+  <!-- Modal for first ID -->
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="reminderCorrectModalLabel">
+          Required documents
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="col-xs-10 mx-auto mt-1">
+          <p>In order to proceed, you will need the following documentation:</p>
+          <p>1. Original ID</p>
+          <p>2. Documents to act as proof of requested change.</p>
+        </div>
+      </div>
+      <div class="modal-footer" style="padding-left:0px; padding-right:0px">
+        <div class="container" style="padding:0px">
+          <div class="space-around">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-dismiss="modal"
+              routerLink="/id-application/correct/form/personal-data"
+            >
+              Proceed&nbsp;&nbsp;<i class="fa fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Reminder Update -->
+<div
+  class="modal fade"
+  id="reminderUpdateModal"
+  role="dialog"
+  aria-hidden="true"
+>
+  <!-- Modal for first ID -->
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="reminderUpdateModalLabel">
+          Required documents
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="col-xs-10 mx-auto mt-1">
+          <p>In order to proceed, you will need the following documentation:</p>
+          <p>1. Original ID</p>
+          <p>
+            2. Original Birth Certificate or Citizenship Certificate or
+            Permanent Resident Permit
+          </p>
+          <p>3. ID Photo</p>
+        </div>
+      </div>
+      <div class="modal-footer" style="padding-left:0px; padding-right:0px">
+        <div class="container" style="padding:0px;">
+          <div class="space-around">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-dismiss="modal"
+              routerLink="/id-application/update/form/personal-data"
+            >
+              Proceed&nbsp;&nbsp;<i class="fa fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
