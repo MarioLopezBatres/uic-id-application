@@ -176,6 +176,7 @@
               <h4 class="text-center">Birth data</h4>
               <div class="row">
                 <b style="margin:0px">Date of birth: &nbsp;&nbsp;</b>
+                <span *ngIf="!values.store2.date">27/11/1989</span>
                 <span>{{ values.store2.date }}&nbsp;</span>
               </div>
               <div class="row">
@@ -228,7 +229,7 @@
               <h4 class="text-center">Uploaded documents</h4>
               <ul>
                 <li style="margin:0px">
-                  Original ID: {{ values.store2.documentPhoto }}
+                  Original ID: {{ values.store2.documentOldID }}
                 </li>
                 <li style="margin:0px">
                   Proof: {{ values.store2.documentProof }}
