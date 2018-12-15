@@ -13,3 +13,15 @@
 * {
   font-size: 15px;
 }
+
+/*Font for the webpage*/
+
+@font-face {
+  font-family: TextFont;
+  src: url(assets/fonts/geomanist-regular-webfont.ttf);
+}
+
+* {
+  font-family: TextFont;
+  cursor: default;
+}
